@@ -13,8 +13,8 @@ const One = () => {
     <div
       style={{
         order,
-        width: "33vw",
-        height: "33vh",
+        width: "25vw",
+        height: "25vh",
       }}
     >
       <MyLogo width="100%" height="100%" />
