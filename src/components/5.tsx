@@ -2,12 +2,12 @@ import {
   useGetComponentOrder,
   useRegisterComponent,
 } from "../context/Order.context";
-import { ReactComponent as MyLogo } from "./1.svg";
+import { ReactComponent as MyLogo } from "./5.svg";
 
 const One = () => {
-  useRegisterComponent("One");
+  useRegisterComponent("Five");
 
-  const order = useGetComponentOrder("One");
+  const order = useGetComponentOrder("Five");
 
   return (
     <div
