@@ -12,10 +12,32 @@ const Six = React.lazy(() => import("./components/6"));
 const Seven = React.lazy(() => import("./components/7"));
 const Eight = React.lazy(() => import("./components/8"));
 const Nine = React.lazy(() => import("./components/9"));
+const Ten = React.lazy(() => import("./components/10"));
+const Eleven = React.lazy(() => import("./components/11"));
+const Twelve = React.lazy(() => import("./components/12"));
+const Thirteen = React.lazy(() => import("./components/13"));
+const Fourteen = React.lazy(() => import("./components/14"));
+const Fifteen = React.lazy(() => import("./components/15"));
+const Sixteen = React.lazy(() => import("./components/16"));
 
-// import One from "./components/1";
-// import Two from "./components/2";
-// import Three from "./components/3";
+const components = [
+  One,
+  Two,
+  Three,
+  Four,
+  Five,
+  Six,
+  Seven,
+  Eight,
+  Nine,
+  Ten,
+  Eleven,
+  Twelve,
+  Thirteen,
+  Fourteen,
+  Fifteen,
+  Sixteen,
+];
 
 function App() {
   return (
@@ -24,39 +46,14 @@ function App() {
         style={{
           display: "flex",
           flexWrap: "wrap",
+          width: "100vw",
         }}
       >
-        <Suspense fallback="LOADING ONE...">
-          <One />
-        </Suspense>
-        <Suspense fallback="LOADING TWO...">
-          <Two />
-        </Suspense>
-        <Suspense fallback="LOADING THREE...">
-          <Three />
-        </Suspense>
-        <Suspense fallback="LOADING Four...">
-          <Four />
-        </Suspense>
-        <Suspense fallback="LOADING Five...">
-          <Five />
-        </Suspense>
-        <Suspense fallback="LOADING Six...">
-          <Six />
-        </Suspense>
-        <Suspense fallback="LOADING Seven...">
-          <Seven />
-        </Suspense>
-        <Suspense fallback="LOADING Eight...">
-          <Eight />
-        </Suspense>
-        <Suspense fallback="LOADING Nine...">
-          <Nine />
-        </Suspense>
-
-        {/* <One />
-        <Two />
-        <Three /> */}
+        {components.map((Component, i) => (
+          <Suspense key={i} fallback="Loading...">
+            <Component />
+          </Suspense>
+        ))}
       </div>
     </OrderContextProvider>
   );
