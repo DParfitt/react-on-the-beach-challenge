@@ -47,6 +47,8 @@ function App() {
           display: "flex",
           flexWrap: "wrap",
           width: "100vw",
+          maxWidth: "800px",
+          margin: "50px auto",
         }}
       >
         {components.map((Component, i) => (

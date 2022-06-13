@@ -13,8 +13,9 @@ const Two = () => {
     <div
       style={{
         order,
-        width: "25vw",
-        height: "25vh",
+        width: "25%",
+        maxWidth: "200px",
+        height: "100%",
       }}
     >
       <MyLogo width="100%" height="100%" />
