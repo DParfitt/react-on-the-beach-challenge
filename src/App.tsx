@@ -1,6 +1,7 @@
 import "./App.css";
 import { OrderContextProvider } from "./context/Order.context";
-
+import { Background } from "./components/Background/Background"
+import { Help } from "./components/Help/Help"
 // SOLUTION:
 // const One = React.lazy(() => import("./components/Pieces/1"));
 // const Two = React.lazy(() => import("./components/Pieces/2"));
@@ -35,6 +36,7 @@ import Thirteen from "./components/Pieces/13";
 import Fourteen from "./components/Pieces/14";
 import Fifteen from "./components/Pieces/15";
 import Sixteen from "./components/Pieces/16";
+import { useState } from "react";
 
 const components = [
   One,
@@ -57,23 +59,27 @@ const components = [
 
 function App() {
   return (
-    <OrderContextProvider>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          width: "100vw",
-          maxWidth: "800px",
-          margin: "50px auto",
-        }}
-      >
-        {components.map((Component, i) => (
-          // <Suspense fallback="Loading..."> key={i}> // SOLUTION
-          <Component key={i} />
-          // </Suspense>
-        ))}
-      </div>
-    </OrderContextProvider>
+    <Background >
+      <OrderContextProvider>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignContent: "flex-start",
+            width: "100vw",
+            maxWidth: "800px",
+            margin: "50px auto",
+          }}
+        >
+          {components.map((Component, i) => (
+            // <Suspense fallback="Loading..."> key={i}> // SOLUTION
+            <Component key={i} />
+            // </Suspense>
+          ))}
+        </div>
+      </OrderContextProvider>
+      <Help />
+    </Background>
   );
 }
 
